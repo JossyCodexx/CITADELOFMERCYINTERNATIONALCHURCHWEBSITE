@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate - Citadel of Mercy International Church</title>
+  <link rel="stylesheet" href="./CSS/donate.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;       /* White background */
+      padding: 15px 30px;
+    }
+
+    .logo img {
+      height: 100px;
+      width: 130%;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #0056b3;   /* Blue text */
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: #003d80;   /* Darker blue on hover */
+    }
+
+    .social-links a {
+      color: #0056b3;   /* Blue icons */
+      font-size: 20px;
+      margin-left: 15px;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #f4d03f;   /* Gold hover */
+    }
+
+
+
+
+
+
+    /* Donation Cards Section */
+    .donate-section {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 30px;
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .donate-card {
+      flex: 1;
+      background: #fff;
+      padding: 40px 25px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .donate-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .donate-card i {
+      font-size: 50px;
+      color: #f4d03f; /* Gold */
+      margin-bottom: 20px;
+    }
+
+    .donate-card h3 {
+      font-size: 24px;
+      color: #0056b3;
+      margin-bottom: 15px;
+    }
+
+    .donate-card p {
+      font-size: 16px;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .donate-btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #0056b3;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .donate-btn:hover {
+      background: #003d80;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="./images/logo.jpg.png" alt="Church Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="messages.html">Messages</a></li>
+      <li><a href="foundation.html">Foundation</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="donate.html">Give / Donate</a></li>
+    </ul>
+    <div class="social-links">
+      <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/2348012345678" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <i class="fas fa-bars"></i>
+  </nav>
+
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-images">
+    <img src="./images/about1.jpg" alt="Hero Image 1">
+    <img src="./images/about2.jpg" alt="Hero Image 2">
+    <img src="./images/about3.jpg" alt="Hero Image 3">
+  </div>
+  <div class="hero-content">
+    <h1>CITADEL OF MERCY INTERNATIONAL CHURCH</h1>
+   <h6 class="hero-subtitle">
+  Then Isaac sowed in that land and reaped in the same year a hundredfold: and the Lord blessed him (Genesis 26:12)
+</h6>
+
+<style>
+.hero-subtitle {
+  background-color: #000;   /* Black background */
+  color: #fff;              /* White text for contrast */
+  font-size: 20px;          /* Font size 20px */
+  padding: 10px 15px;       /* Some padding */
+  border-radius: 8px;       /* Optional rounded corners */
+  display: inline-block;    /* Wrap text neatly */
+  margin-top: 10px;         /* Space from above elements */
+}
+</style>
+
+  </div>
+</section>
+
+<style>
+  /* Reset for full width/height */
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Hero Section Fullscreen */
+  .hero {
+    position: relative;
+    width: 100%;       /* Full width */
+    height: 100vh;     /* Full height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    color: #fff;
+  }
+
+  /* Background Images */
+  .hero-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;   /* Full width */
+    height: 100%;  /* Full height */
+    z-index: -1;
+  }
+
+  .hero-images img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;   /* Full width */
+    height: 100%;  /* Full height */
+    object-fit: cover;
+    opacity: 0;
+    animation: fade 12s infinite;
+  }
+
+  .hero-images img:nth-child(1) { animation-delay: 0s; }
+  .hero-images img:nth-child(2) { animation-delay: 4s; }
+  .hero-images img:nth-child(3) { animation-delay: 8s; }
+
+  @keyframes fade {
+    0%, 33% { opacity: 1; }
+    34%, 100% { opacity: 0; }
+  }
+
+  /* Hero Text */
+  .hero-content h1 {
+    font-size: 50px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px 30px;
+    border-radius: 12px;
+  }
+</style>
+
+
+
+  <!-- Donation Cards Section -->
+  <section class="donate-section">
+    <!-- Card 1 -->
+    <div class="donate-card">
+      <i class="fas fa-hand-holding-heart"></i>
+      <h3>Donate to Our Foundation</h3>
+      <p>Your donation helps us support the needy, homeless, and underprivileged children.</p>
+      <a href="foundation.html" class="donate-btn">Donate Now</a>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="donate-card">
+      <i class="fas fa-money-bill-wave"></i>
+      <h3>Give to Citadel of Mercy</h3>
+      <p>Support the ministry of Citadel of Mercy International Church and be a blessing.</p>
+      <a href="donate.html" class="donate-btn">Give Now</a>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Logo & About -->
+    <div class="footer-col">
+      <a href="index.html" class="footer-logo">
+        <img src="./images/logo.jpg.png" alt="Church Logo">
+        <h2>CITADEL OF MERCY <span class="highlight">CHURCH</span></h2>
+      </a>
+      <p>A place where faith comes alive and community thrives in God’s presence.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="foundation.html">Foundation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="donate.html">Give / Donate</a></li>
+      </ul>
+    </div>
+
+    <!-- Ministries -->
+    <div class="footer-col">
+      <h3>Our Ministries</h3>
+      <ul>
+        <li><a href="#">Worship & Choir</a></li>
+        <li><a href="#">Youth Fellowship</a></li>
+        <li><a href="#">Children Ministry</a></li>
+        <li><a href="#">Community Outreach</a></li>
+        <li><a href="#">Prayer Team</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <p><i class="fas fa-envelope"></i> info@citadelofmercy.org</p>
+      <p><i class="fas fa-phone"></i> +234 801 234 5678</p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/2348012345678" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 Citadel of Mercy International Church. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+<script src="./Js/donate.js" defer></script>
+</body>
+</html>

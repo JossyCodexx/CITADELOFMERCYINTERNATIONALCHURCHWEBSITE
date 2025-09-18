@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - CITADEL OF MERCY INTERNATIONAL CHURCH</title>
+  <link rel="stylesheet" href="./CSS/about.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="./images/logo.jpg.png" alt="Church Logo">
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="messages.html">Messages</a></li>
+    <li><a href="foundation.html">Foundation</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="donate.html">Give / Donate</a></li>
+  </ul>
+  <div class="social-links">
+    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/2348012345678" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <i class="fas fa-bars"></i>
+</nav>
+
+
+
+  <!-- Hero Section -->
+<section class="hero">
+  <div class="hero-images">
+    <img src="./images/about1.jpg" alt="Hero Image 1">
+    <img src="./images/about2.jpg" alt="Hero Image 2">
+    <img src="./images/about3.jpg" alt="Hero Image 3">
+  </div>
+  <div class="hero-content">
+    <h1>CITADEL OF MERCY INTERNATIONAL CHURCH</h1>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    height: 100vh; /* Full page */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+  }
+
+  .hero-images {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+  }
+
+  .hero-images img {
+    position: absolute;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fade 12s infinite;
+  }
+  .hero-images img:nth-child(1) { animation-delay: 0s; }
+  .hero-images img:nth-child(2) { animation-delay: 4s; }
+  .hero-images img:nth-child(3) { animation-delay: 8s; }
+
+  @keyframes fade {
+    0%, 33% { opacity: 1; }
+    34%, 100% { opacity: 0; }
+  }
+
+  .hero-content h1 {
+    font-size: 50px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px 30px;
+    border-radius: 12px;
+  }
+</style>
+
+
+
+  <!-- Section 1 -->
+  <section class="section">
+    <div class="card">
+      <img src="./images/church1.jpg" alt="Church 1">
+      <img src="./images/church2.jpg" alt="Church 2">
+      <img src="./images/church3.jpg" alt="Church 3">
+    </div>
+    <div class="content">
+      <h2>A Spiritual Church Empowered by the Holy Spirit</h2>
+      <p>
+        At Citadel of Mercy International Church, we believe in the power of the Holy Spirit to transform lives, heal brokenness, and empower believers for greater works. Our church is a beacon of light where God’s glory is revealed daily.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="section reverse">
+    <div class="content">
+      <h2>Our Aim and Purpose</h2>
+      <p>
+        The purpose of Citadel of Mercy International Church is rooted in God’s divine will. We are here to raise disciples, spread the gospel of salvation, and live out God’s love in this world.  
+        Our mission is to draw all men to Christ and prepare them for eternal life with God.
+      </p>
+    </div>
+    <div class="card">
+      <img src="./images/purpose1.jpg" alt="Purpose 1">
+      <img src="./images/purpose2.jpg" alt="Purpose 2">
+      <img src="./images/purpose3.jpg" alt="Purpose 3">
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+/* ========= Config ========= */
+const heroIntervalMs = 80000;        // 80s per image -> 3 images ~ 4 minutes total
+const defaultCardIntervalMs = 4000;  // 4s per image for cards (change if you want slower)
+
+/* ========= Hero slideshow ========= */
+function startHeroSlideshow() {
+  const heroImgs = Array.from(document.querySelectorAll('.hero-images img'));
+  if (!heroImgs.length) return;
+  let i = 0;
+  // show first
+  heroImgs.forEach(img => img.classList.remove('active'));
+  heroImgs[i].classList.add('active');
+
+  setInterval(() => {
+    heroImgs[i].classList.remove('active');
+    i = (i + 1) % heroImgs.length;
+    heroImgs[i].classList.add('active');
+  }, heroIntervalMs);
+}
+
+/* ========= Card slideshows ========= */
+/* Works for images directly inside .card OR inside .card .slides */
+function startCardSlides() {
+  const cardElements = Array.from(document.querySelectorAll('.card'));
+  cardElements.forEach(card => {
+    // find images: either direct child imgs, or .slides img
+    let imgs = Array.from(card.querySelectorAll(':scope > img'));
+    if (!imgs.length) {
+      imgs = Array.from(card.querySelectorAll('.slides img'));
+    }
+    if (!imgs.length) return;
+
+    let idx = 0;
+    imgs.forEach(img => img.classList.remove('active'));
+    imgs[idx].classList.add('active');
+
+    // allow per-card interval via data-interval attribute (ms)
+    const cardInterval = parseInt(card.getAttribute('data-interval')) || defaultCardIntervalMs;
+
+    setInterval(() => {
+      imgs[idx].classList.remove('active');
+      idx = (idx + 1) % imgs.length;
+      imgs[idx].classList.add('active');
+    }, cardInterval);
+  });
+}
+
+/* Start when DOM ready */
+document.addEventListener('DOMContentLoaded', () => {
+  startHeroSlideshow();
+  startCardSlides();
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Logo & About -->
+    <div class="footer-col">
+      <a href="index.html" class="footer-logo">
+        <img src="./images/logo.jpg.png" alt="Church Logo">
+        <h2>CITADEL OF MERCY <span class="highlight">CHURCH</span></h2>
+      </a>
+      <p>A place where faith comes alive and community thrives in God’s presence.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="foundation.html">Foundation</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="donate.html">Give / Donate</a></li>
+      </ul>
+    </div>
+
+    <!-- Ministries -->
+    <div class="footer-col">
+      <h3>Our Ministries</h3>
+      <ul>
+        <li><a href="#">Worship & Choir</a></li>
+        <li><a href="#">Youth Fellowship</a></li>
+        <li><a href="#">Children Ministry</a></li>
+        <li><a href="#">Community Outreach</a></li>
+        <li><a href="#">Prayer Team</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <p><i class="fas fa-envelope"></i> info@citadelofmercy.org</p>
+      <p><i class="fas fa-phone"></i> +234 801 234 5678</p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/2348012345678" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 Citadel of Mercy International Church. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="./Js/about.js" defer></script>
+</body>
+</html>

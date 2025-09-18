@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foundation - Citadel of Mercy International Church</title>
+  <link rel="stylesheet" href="./CSS/foundation.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 15px 30px;
+    }
+    .logo img {
+      height: 100px;
+      width: 130%;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #0056b3;
+      font-weight: bold;
+    }
+    .nav-links a:hover {
+      color: #003d80;
+    }
+    .social-links a {
+      color: #0056b3;
+      font-size: 20px;
+      margin-left: 15px;
+      transition: color 0.3s;
+    }
+    .social-links a:hover {
+      color: #f4d03f;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 80vh;
+      overflow: hidden;
+    }
+    .hero-images {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .hero-images img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      animation: slideShow 15s infinite;
+    }
+    .hero-images img:nth-child(1) { animation-delay: 0s; }
+    .hero-images img:nth-child(2) { animation-delay: 5s; }
+    .hero-images img:nth-child(3) { animation-delay: 10s; }
+
+    @keyframes slideShow {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      30% { opacity: 1; }
+      40% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      text-align: center;
+      max-width: 800px;
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 10px;
+    }
+    .hero-content h1 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+    .hero-content p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    /* Buttons Section */
+    .button-section {
+      text-align: center;
+      margin: 40px auto;
+    }
+    .button-section a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      background: #0056b3;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .button-section a:hover {
+      background: #003d80;
+    }
+
+    /* Cards Section */
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px 50px;
+    }
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .card-images {
+      position: relative;
+      height: 250px;
+    }
+    .card-images img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      animation: slideCard 12s infinite;
+    }
+    .card-images img:nth-child(1) { animation-delay: 0s; }
+    .card-images img:nth-child(2) { animation-delay: 4s; }
+    .card-images img:nth-child(3) { animation-delay: 8s; }
+
+    @keyframes slideCard {
+      0% { opacity: 0; }
+      10% { opacity: 1; }
+      30% { opacity: 1; }
+      40% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    .card-content {
+      padding: 15px;
+      background: #fff;
+      text-align: center;
+    }
+    .card-content h3 {
+      margin: 10px 0;
+      color: #0056b3;
+    }
+    .card-content p {
+      font-size: 15px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="./images/logo.jpg.png" alt="Church Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="messages.html">Messages</a></li>
+      <li><a href="foundation.html">Foundation</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="donate.html">Give / Donate</a></li>
+    </ul>
+    <div class="social-links">
+      <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/2348012345678" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <i class="fas fa-bars"></i>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-images">
+      <img src="./images/heroo1.jpg" alt="Hero Image 1">
+      <img src="./images/heroo2.jpg" alt="Hero Image 2">
+      <img src="./images/heroo3.jpg" alt="Hero Image 3">
+    </div>
+    <div class="hero-content">
+      <h1>CITADEL OF MERCY INTERNATIONAL CHURCH</h1>
+      <p>Our foundation lending a hand to the needy, homeless and underprivileged children has always been part of the ministry of Citadel of Mercy International Church.</p>
+    </div>
+  </section>
+
+  <!-- Buttons -->
+  <section class="button-section">
+    <a href="all.html">All</a>
+    <a href="education.html">Education</a>
+    <a href="empowerment.html">Empowerment</a>
+    <a href="donation.html">Donation</a>
+  </section>
+
+  <!-- Cards -->
+  <section class="cards-container">
+    <div class="card">
+      <div class="card-images">
+        <img src="./images/edu1.jpg" alt="Education 1">
+        <img src="./images/edu2.jpg" alt="Education 2">
+        <img src="./images/edu3.jpg" alt="Education 3">
+      </div>
+      <div class="card-content">
+        <h3>Education Support</h3>
+        <p>Helping children gain access to quality education.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-images">
+        <img src="./images/emp1.jpg" alt="Empowerment 1">
+        <img src="./images/emp2.jpg" alt="Empowerment 2">
+        <img src="./images/emp3.jpg" alt="Empowerment 3">
+      </div>
+      <div class="card-content">
+        <h3>Empowerment</h3>
+        <p>Training and empowering people for a brighter future.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-images">
+        <img src="./images/don1.jpg" alt="Donation 1">
+        <img src="./images/don2.jpg" alt="Donation 2">
+        <img src="./images/don3.jpg" alt="Donation 3">
+      </div>
+      <div class="card-content">
+        <h3>Donation Drives</h3>
+        <p>Supporting families and children with donations.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-images">
+        <img src="./images/edu4.jpg" alt="Education 4">
+        <img src="./images/edu5.jpg" alt="Education 5">
+        <img src="./images/edu6.jpg" alt="Education 6">
+      </div>
+      <div class="card-content">
+        <h3>Scholarship Programs</h3>
+        <p>Providing scholarships to underprivileged students.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-images">
+        <img src="./images/emp4.jpg" alt="Empowerment 4">
+        <img src="./images/emp5.jpg" alt="Empowerment 5">
+        <img src="./images/emp6.jpg" alt="Empowerment 6">
+      </div>
+      <div class="card-content">
+        <h3>Skill Development</h3>
+        <p>Equipping youths with essential skills.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-images">
+        <img src="./images/don4.jpg" alt="Donation 4">
+        <img src="./images/don5.jpg" alt="Donation 5">
+        <img src="./images/don6.jpg" alt="Donation 6">
+      </div>
+      <div class="card-content">
+        <h3>Charity Projects</h3>
+        <p>Extending love through organized charity events.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- Donate Hero Section -->
+<section class="donate-hero">
+  <div class="donate-overlay">
+    <h2>Always give without remembering<br>and always receive without forgetting</h2>
+    <a href="donate.html" class="donate-btn">DONATE NOW</a>
+  </div>
+
+  <!-- Background Images -->
+  <div class="donate-hero-images">
+    <img src="./images/donate-bg1.jpg" alt="Donate Background 1">
+    <img src="./images/donate-bg2.jpg" alt="Donate Background 2">
+    <img src="./images/donate-bg3.jpg" alt="Donate Background 3">
+  </div>
+</section>
+
+<style>
+/* Donate Hero Section Full Page */
+.donate-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;  /* Full page height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donate-hero-images {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+}
+
+.donate-hero-images img {
+  position: absolute;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fade 15s infinite;
+}
+
+/* 3-image animation */
+.donate-hero-images img:nth-child(1) { animation-delay: 0s; }
+.donate-hero-images img:nth-child(2) { animation-delay: 5s; }
+.donate-hero-images img:nth-child(3) { animation-delay: 10s; }
+
+@keyframes fade {
+  0%, 20% { opacity: 1; }
+  33.33%, 100% { opacity: 0; }
+}
+
+.donate-overlay {
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+  padding: 50px 30px;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+  max-width: 900px;
+  position: relative;
+  z-index: 2;
+}
+
+.donate-overlay h2 {
+  font-size: 36px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.donate-btn {
+  display: inline-block;
+  padding: 15px 40px;
+  background: #f4d03f; /* gold */
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 18px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.donate-btn:hover {
+  background: #d4ac0d;
+  transform: scale(1.08);
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Logo & About -->
+    <div class="footer-col">
+      <a href="index.html" class="footer-logo">
+        <img src="./images/logo.jpg.png" alt="Church Logo">
+        <h2>CITADEL OF MERCY <span class="highlight">CHURCH</span></h2>
+      </a>
+      <p>A place where faith comes alive and community thrives in God’s presence.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="foundation.html">Foundation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="donate.html">Give / Donate</a></li>
+      </ul>
+    </div>
+
+    <!-- Ministries -->
+    <div class="footer-col">
+      <h3>Our Ministries</h3>
+      <ul>
+        <li><a href="#">Worship & Choir</a></li>
+        <li><a href="#">Youth Fellowship</a></li>
+        <li><a href="#">Children Ministry</a></li>
+        <li><a href="#">Community Outreach</a></li>
+        <li><a href="#">Prayer Team</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <p><i class="fas fa-envelope"></i> info@citadelofmercy.org</p>
+      <p><i class="fas fa-phone"></i> +234 801 234 5678</p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/2348012345678" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 Citadel of Mercy International Church. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+
+
+<script src="./Js/foundation.js" defer></script>
+</body>
+</html>

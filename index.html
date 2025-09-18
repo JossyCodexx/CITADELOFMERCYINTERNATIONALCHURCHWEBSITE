@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citadel of Mercy International Church</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="./images/logo.jpg.png" alt="Church Logo">
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="messages.html">Messages</a></li>
+    <li><a href="foundation.html">Foundation</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="donate.html">Give / Donate</a></li>
+  </ul>
+  <div class="social-links">
+    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/2348012345678" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <i class="fas fa-bars"></i>
+</nav>
+
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-slideshow">
+    <img src="images/hero1.jpg" class="active" alt="Hero 1">
+    <img src="images/hero2.jpg" alt="Hero 2">
+    <img src="images/hero3.jpg" alt="Hero 3">
+  </div>
+
+
+  <div class="hero-content"> 
+  <h1>
+    <span class="highlight-text">
+      Welcome to <span>CITADEL OF MERCY INTERNATIONAL CHURCH</span>
+    </span>
+  </h1>
+  <p class="hero-subtext">Where faith comes alive and community thrives</p>
+  <div class="buttons">
+    <a href="about.html" class="btn">Learn More</a>
+    <a href="donate.html" class="btn donate">Donate</a>
+  </div>
+</div>
+
+   
+</section>
+
+<style>
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-slideshow {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+.hero-slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-slideshow img.active {
+  opacity: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+}
+</style>
+
+<script>
+let slides = document.querySelectorAll(".hero-slideshow img");
+let index = 0;
+
+setInterval(() => {
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+}, 4000); // change every 4 seconds
+</script>
+
+
+
+<!-- About Section -->
+<section id="about">
+  <h2 class="nice1">Nice to Meet You</h2>
+  <div class="cards">
+
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="card-slideshow">
+        <div class="slides">
+          <img src="images/pastor1.jpg" alt="Pastor Image 1">
+          <img src="images/pastor2.jpg" alt="Pastor Image 2">
+          <img src="images/pastor3.jpg" alt="Pastor Image 3">
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Our Senior Pastor</h3>
+        <p>
+          Meet the visionary leader of Citadel of Mercy International Church.  
+          A servant of God dedicated to preaching the undiluted Word of truth and leading souls to Christ.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="card-slideshow">
+        <div class="slides">
+          <img src="images/choir1.jpg" alt="Choir 1">
+          <img src="images/choir2.jpg" alt="Choir 2">
+          <img src="images/choir3.jpg" alt="Choir 3">
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Our Choir</h3>
+        <p>
+          The Citadel Choir ushers God’s presence through powerful worship and praise.  
+          Their mission is to minister to the hearts of people with heavenly melodies.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="card-slideshow">
+        <div class="slides">
+          <img src="images/community1.jpg" alt="Community Outreach 1">
+          <img src="images/community2.jpg" alt="Community Outreach 2">
+          <img src="images/community3.jpg" alt="Community Outreach 3">
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Community Outreach</h3>
+        <p>
+          We believe in love in action.  
+          Through food drives, medical aid, and education, we extend God’s mercy to our community.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+      <div class="card-slideshow">
+        <div class="slides">
+          <img src="images/prayer1.jpg" alt="Prayer Meeting 1">
+          <img src="images/prayer2.jpg" alt="Prayer Meeting 2">
+          <img src="images/prayer3.jpg" alt="Prayer Meeting 3">
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Prayer Ministry</h3>
+        <p>
+          Our intercessory team stands in the gap for the church, families, and nations.  
+          Prayer is the heartbeat of Citadel of Mercy International Church.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+<!-- Sermons Section -->
+<section id="sermons">
+  <h2 class="nice2">Our Messages</h2>
+  <div class="cards">
+    
+    <div class="card">
+      <div class="card-slideshow">
+        <div class="slides">
+          <img src="images/sermon1a.jpg" alt="Message 1">
+          <img src="images/sermon1b.jpg" alt="Message 1">
+          <img src="images/sermon1c.jpg" alt="Message 1">
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Focusing on Christ</h3>
+        <p>A message on keeping our eyes fixed on Jesus, the author and finisher of our faith.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-slideshow">
+        <div class="slides">
+          <img src="images/sermon2a.jpg" alt="Message 2">
+          <img src="images/sermon2b.jpg" alt="Message 2">
+          <img src="images/sermon2c.jpg" alt="Message 2">
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Secret of Walking with the Lord</h3>
+        <p>Discover the joy, power, and intimacy that comes from a daily walk with the Lord.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-slideshow">
+        <div class="slides">
+          <img src="images/sermon3a.jpg" alt="Message 3">
+          <img src="images/sermon3b.jpg" alt="Message 3">
+          <img src="images/sermon3c.jpg" alt="Message 3">
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>Importance of Prayer</h3>
+        <p>The necessity of prayer in building a victorious Christian life.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Logo & About -->
+    <div class="footer-col">
+      <a href="index.html" class="footer-logo">
+        <img src="./images/logo.jpg.png" alt="Church Logo">
+        <h2>CITADEL OF MERCY <span class="highlight">CHURCH</span></h2>
+      </a>
+      <p>A place where faith comes alive and community thrives in God’s presence.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="foundation.html">Foundation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="donate.html">Give / Donate</a></li>
+      </ul>
+    </div>
+
+    <!-- Ministries -->
+    <div class="footer-col">
+      <h3>Our Ministries</h3>
+      <ul>
+        <li><a href="#">Worship & Choir</a></li>
+        <li><a href="#">Youth Fellowship</a></li>
+        <li><a href="#">Children Ministry</a></li>
+        <li><a href="#">Community Outreach</a></li>
+        <li><a href="#">Prayer Team</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <p><i class="fas fa-envelope"></i> info@citadelofmercy.org</p>
+      <p><i class="fas fa-phone"></i> +234 801 234 5678</p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+        <a href="https://wa.me/2348012345678" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Copyright -->
+  <div class="footer-bottom">
+    <p>&copy; 2025 Citadel of Mercy International Church. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+<script>
+  function startCardSlides() {
+    document.querySelectorAll('.card-slideshow .slides').forEach(slides => {
+      let images = slides.querySelectorAll('img');
+      let index = 0;
+
+      // Show the first image
+      images[index].classList.add('active');
+
+      setInterval(() => {
+        images[index].classList.remove('active');   // hide current
+        index = (index + 1) % images.length;        // move to next
+        images[index].classList.add('active');      // show next
+      }, 4000); // change every 4s
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", startCardSlides);
+</script>
+
+<script src="./Js/index.js" defer></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

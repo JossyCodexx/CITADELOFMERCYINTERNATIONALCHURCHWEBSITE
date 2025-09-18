@@ -1,0 +1,309 @@
+/* =========================
+   Citadel — Slideshow CSS
+   ========================= */
+
+/* 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; color: #222; background: #f6f6f6; } */
+
+
+/* ======================
+   HERO — full-screen
+   ====================== */
+.hero {
+  position: relative;
+  height: 100vh;            /* full page height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+/* container of hero images (stacked) */
+.hero-images {
+  position: absolute;
+  inset: 0;                 /* top:0; right:0; bottom:0; left:0; */
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* stack images exactly on top of each other */
+.hero-images img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  will-change: opacity;
+}
+
+/* visible image */
+.hero-images img.active { opacity: 1; }
+
+/* hero heading box (keeps readable) */
+.hero h1 {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(28px, 4vw, 56px); /* responsive */
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  padding: 18px 28px;
+  border-radius: 10px;
+  line-height: 1.1;
+  max-width: 90%;
+}
+
+/* small hero subtitle (optional) */
+.hero .hero-sub {
+  position: relative;
+  z-index: 2;
+  margin-top: 12px;
+  font-size: 18px;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* ======================
+   SECTION LAYOUT (cards)
+   ====================== */
+.section {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 8%;
+  flex-wrap: wrap;
+}
+
+/* card container (holds stacked images) */
+.card {
+  position: relative;
+  width: 48%;              /* default two-column layout */
+  min-height: 360px;      /* change if you need different height */
+  border-radius: 12px;
+  overflow: hidden;
+  background: #eee;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* fallback HTML structure (images directly inside .card) */
+.card > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  will-change: opacity;
+}
+.card > img.active { opacity: 1; }
+
+/* also support .card-slideshow/.slides markup if used */
+.card .slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.card .slides img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.card .slides img.active { opacity: 1; }
+
+/* Content column next to card */
+.content {
+  flex: 1;
+  min-width: 260px;
+  max-width: 48%;
+}
+.content h2 { font-size: 26px; margin-bottom: 12px; color:#111; }
+.content p { font-size: 18px; line-height: 1.6; color:#333; }
+
+/* reverse layout helper (use .section.reverse) */
+.section.reverse { flex-direction: row-reverse; }
+
+/* small screens — stack vertically */
+@media (max-width: 900px) {
+  .section { padding: 40px 6%; gap: 24px; }
+  .card, .content { width: 100%; max-width: 100%; }
+  .card { min-height: 260px; }
+  .hero h1 { font-size: clamp(22px, 6vw, 36px); padding: 12px 16px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;       /* White background */
+  padding: 15px 30px;
+}
+
+.logo img {
+  height: 100px;
+  width: 130%;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #0056b3;   /* Blue text */
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #003d80;   /* Darker blue on hover */
+}
+
+.social-links a {
+  color: #0056b3;   /* Blue icons */
+  font-size: 20px;
+  margin-left: 15px;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #f4d03f;   /* Gold hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+.footer {
+  background: #111;
+  color: #ddd;
+  padding: 50px 20px 20px;
+  font-size: 14px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer-logo img {
+  width: 50px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.footer-logo h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.footer-logo .highlight {
+  color: #f4d03f;
+}
+
+.footer-col h3 {
+  margin-bottom: 15px;
+  color: #f4d03f;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  text-decoration: none;
+  color: #ddd;
+  transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #f4d03f;
+}
+
+.footer-col p {
+  margin: 5px 0;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  color: #ddd;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #f4d03f;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #bbb;
+}
