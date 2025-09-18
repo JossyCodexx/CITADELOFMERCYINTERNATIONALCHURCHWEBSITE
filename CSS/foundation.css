@@ -1,3 +1,60 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;       /* White background */
+  padding: 15px 30px;
+}
+
+.logo img {
+  height: 100px;
+  width: 130%;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #0056b3;   /* Blue text */
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #003d80;   /* Darker blue on hover */
+}
+
+.social-links a {
+  color: #0056b3;   /* Blue icons */
+  font-size: 20px;
+  margin-left: 15px;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #f4d03f;   /* Gold hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
