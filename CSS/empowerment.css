@@ -1,3 +1,398 @@
+/* =========================
+   Citadel — Slideshow CSS
+   ========================= */
+
+/* 
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Arial, sans-serif; color: #222; background: #f6f6f6; } */
+
+
+/* ======================
+   HERO — full-screen
+   ====================== */
+/* Apply Poppins to the whole website */
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+} 
+
+
+
+.hero {
+  position: relative;
+  height: 100vh;            /* full page height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+/* container of hero images (stacked) */
+.hero-images {
+  position: absolute;
+  inset: 0;                 /* top:0; right:0; bottom:0; left:0; */
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* stack images exactly on top of each other */
+.hero-images img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  will-change: opacity;
+}
+
+/* visible image */
+.hero-images img.active { opacity: 1; }
+
+/* hero heading box (keeps readable) */
+.hero h1 {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(28px, 4vw, 56px); /* responsive */
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  padding: 18px 28px;
+  border-radius: 10px;
+  line-height: 1.1;
+  max-width: 90%;
+}
+
+/* small hero subtitle (optional) */
+.hero .hero-sub {
+  position: relative;
+  z-index: 2;
+  margin-top: 12px;
+  font-size: 18px;
+  background: rgba(0,0,0,0.65);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* ======================
+   SECTION LAYOUT (cards)
+   ====================== */
+.section {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 8%;
+  flex-wrap: wrap;
+}
+
+/* card container (holds stacked images) */
+.card {
+  position: relative;
+  width: 48%;              /* default two-column layout */
+  min-height: 360px;      /* change if you need different height */
+  border-radius: 12px;
+  overflow: hidden;
+  background: #eee;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* fallback HTML structure (images directly inside .card) */
+.card > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  will-change: opacity;
+}
+.card > img.active { opacity: 1; }
+
+/* also support .card-slideshow/.slides markup if used */
+.card .slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.card .slides img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.card .slides img.active { opacity: 1; }
+
+/* Content column next to card */
+.content {
+  flex: 1;
+  min-width: 260px;
+  max-width: 48%;
+}
+.content h2 { font-size: 26px; margin-bottom: 12px; color:#111; }
+.content p { font-size: 18px; line-height: 1.6; color:#333; }
+
+/* reverse layout helper (use .section.reverse) */
+.section.reverse { flex-direction: row-reverse; }
+
+/* small screens — stack vertically */
+@media (max-width: 900px) {
+  .section { padding: 40px 6%; gap: 24px; }
+  .card, .content { width: 100%; max-width: 100%; }
+  .card { min-height: 260px; }
+  .hero h1 { font-size: clamp(22px, 6vw, 36px); padding: 12px 16px; }
+}
+
+
+
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+} 
+
+
+
+
+body {
+  padding-top: 120px; 
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;      
+  top: 0;               
+  left: 0;
+  width: 100%;         
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;     
+  padding: 15px 30px;
+  z-index: 1000;        
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.logo img {
+  height: 100px;
+  width: 130%;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #0056b3;   /* Blue text */
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  color: #003d80;   /* Darker blue on hover */
+}
+
+
+
+.nav-links li {
+  position: relative;
+  list-style: none;
+}
+
+.nav-links .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 200px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.nav-links .dropdown-menu li {
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-links .dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.nav-links .dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.nav-links .dropdown-menu a:hover {
+  background: #0066cc;
+  color: white;
+}
+
+
+.nav-links .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+.nav-links .dropdown > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Default: show nav links, hide bars */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #0056b3;
+  cursor: pointer;
+  margin-left: 200px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+/* Mobile styles */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block; /* show bars */
+  }
+
+  .nav-links {
+    display: none; /* hide links */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  }
+
+  .nav-links.show {
+    display: flex; /* show when toggled */
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Dropdown on mobile (expand inside list) */
+  .dropdown-menu {
+    display: none;
+    flex-direction: column;
+    background: #f9f9f9;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: flex;
+  }
+}
+
+
+.fa-bars{
+    margin-right: 200px;
+}
+
+
+
+
+
+
+
+ 
+    /* Navbar */
+    .navbar { display:flex; justify-content:space-between; align-items:center; background:#fff; padding:15px 30px; }
+    .logo img { height:100px; width:130%; }
+    .nav-links { list-style:none; display:flex; gap:20px; }
+    .nav-links a { text-decoration:none; color:#0056b3; font-weight:bold; }
+    .nav-links a:hover { color:#003d80; }
+    .social-links a { color:#0056b3; font-size:20px; margin-left:15px; transition:color 0.3s; }
+    .social-links a:hover { color:#f4d03f; }
+
+    /* Hero Section */
+    .hero { position:relative; height:100vh; overflow:hidden; }
+    .hero-images { position:absolute; top:0; left:0; width:100%; height:100%; }
+    .hero-images img { position:absolute; width:100%; height:100%; object-fit:cover; opacity:0; animation:slideShow 15s infinite; }
+    .hero-images img:nth-child(1) { animation-delay:0s; }
+    .hero-images img:nth-child(2) { animation-delay:5s; }
+    .hero-images img:nth-child(3) { animation-delay:10s; }
+    @keyframes slideShow { 0%{opacity:0;} 10%{opacity:1;} 30%{opacity:1;} 40%{opacity:0;} 100%{opacity:0;} }
+    .hero-content { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#fff; text-align:center; max-width:850px; padding:20px; background: rgba(0,0,0,0.6); border-radius:10px; }
+    .hero-content h1 { font-size:36px; margin-bottom:15px; text-transform:uppercase; }
+    .hero-content p { font-size:18px; line-height:1.6; }
+
+    /* Buttons Section */
+    .button-section { text-align:center; margin:40px auto; }
+    .button-section a { display:inline-block; margin:10px; padding:12px 25px; background:#0056b3; color:#fff; font-weight:bold; text-decoration:none; border-radius:5px; transition:background 0.3s; }
+    .button-section a:hover { background:#003d80; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Footer */
@@ -86,4 +481,245 @@
   margin-top: 20px;
   font-size: 13px;
   color: #bbb;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Empower Section Layout */
+.empower-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 40px 0;
+  padding: 0 30px;
+}
+
+.empower-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.empower-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Slideshow inside card */
+.empower-slideshow {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.empower-slideshow .slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.empower-slideshow .slides img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.empower-slideshow .slides img.active {
+  opacity: 1;
+  border-bottom: 3px solid #eee;
+}
+
+/* Card Content */
+.empower-card-content {
+  padding: 15px;
+  text-align: center;
+}
+
+.empower-card-content h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #006600;
+}
+
+.empower-card-content p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+
+
+
+
+
+
+/* ==================== Mobile Responsive ==================== */
+
+/* Tablets & small desktops */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+  .logo img {
+    height: 80px;
+    width: auto;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .social-links {
+    margin-top: 10px;
+  }
+
+  /* Hero Section */
+  .hero-content {
+    max-width: 90%;
+    padding: 15px;
+  }
+  .hero-content h1 {
+    font-size: 28px;
+  }
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  /* Buttons Section */
+  .button-section a {
+    padding: 10px 20px;
+    font-size: 14px;
+    margin: 8px;
+  }
+
+  /* Empower Section */
+  .empower-section {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    gap: 25px;
+  }
+  .empower-slideshow {
+    height: 180px;
+  }
+  .empower-card-content h3 {
+    font-size: 18px;
+  }
+  .empower-card-content p {
+    font-size: 14px;
+  }
+
+  /* Footer */
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .footer-logo img {
+    width: 45px;
+  }
+  .footer-logo h2 {
+    font-size: 16px;
+  }
+  .footer-col h3 {
+    font-size: 16px;
+  }
+  .footer-col ul li a {
+    font-size: 14px;
+  }
+  .social-icons a {
+    font-size: 16px;
+    margin: 5px;
+  }
+  .footer-bottom {
+    font-size: 12px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+  /* Navbar */
+  .logo img {
+    height: 60px;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .social-links a {
+    font-size: 16px;
+    margin-left: 8px;
+  }
+
+  /* Hero Section */
+  .hero-content h1 {
+    font-size: 22px;
+  }
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  /* Buttons Section */
+  .button-section a {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  /* Empower Section */
+  .empower-slideshow {
+    height: 150px;
+  }
+  .empower-card-content h3 {
+    font-size: 16px;
+  }
+  .empower-card-content p {
+    font-size: 13px;
+  }
+
+  /* Footer */
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .footer-logo img {
+    width: 35px;
+  }
+  .footer-logo h2 {
+    font-size: 14px;
+  }
+  .footer-col h3 {
+    font-size: 14px;
+  }
+  .footer-col ul li a {
+    font-size: 13px;
+  }
+  .social-icons a {
+    font-size: 14px;
+    margin: 4px;
+  }
+  .footer-bottom {
+    font-size: 11px;
+  }
 }

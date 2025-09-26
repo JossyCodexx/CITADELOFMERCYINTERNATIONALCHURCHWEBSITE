@@ -4,32 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Citadel of Mercy International Church</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
+
+
+
+
+
 
 <!-- Navbar -->
 <nav class="navbar">
   <div class="logo">
     <img src="./images/logo.jpg.png" alt="Church Logo">
   </div>
-  <ul class="nav-links">
+
+  <!-- Hamburger Icon (mobile only) -->
+  <div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Nav Links -->
+  <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="messages.html">Messages</a></li>
-    <li><a href="foundation.html">Foundation</a></li>
+
+    <!-- Dropdown for Foundation -->
+    <li class="dropdown">
+      <a href="foundation.html">Foundation <i class="fas fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="youth-academy.html">Youth Academy</a></li>
+        <li><a href="leadership-development.html">Leadership Development</a></li>
+        <li><a href="sunday-school.html">Sunday School</a></li>
+        <li><a href="prayer-ministry.html">Prayer Ministry</a></li>
+      </ul>
+    </li>
+
+    <!-- Dropdown for Education -->
+    <li class="dropdown">
+      <a href="education.html">Education <i class="fas fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="bible-college.html">Bible College</a></li>
+        <li><a href="training-seminars.html">Training & Seminars</a></li>
+      </ul>
+    </li>
+
+    <!-- Dropdown for Community Outreach -->
+    <li class="dropdown">
+      <a href="community-outreach.html" class="active">Community Outreach <i class="fas fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="food-drives.html">Food Drives</a></li>
+        <li><a href="medical-aid.html">Medical Aid</a></li>
+        <li><a href="education-support.html">Educational Support</a></li>
+        <li><a href="empowerment.html">Community Empowerment</a></li>
+        <li><a href="volunteer.html">Volunteer With Us</a></li>
+      </ul>
+    </li>
+
     <li><a href="contact.html">Contact</a></li>
-    <li><li><a href="donation.html">Donation</a></li></li>
+    <li><a href="donation.html">Donation</a></li>
   </ul>
-  <div class="social-links">
-    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://wa.me/2348012345678" target="_blank"><i class="fab fa-whatsapp"></i></a>
-  </div>
-  <i class="fas fa-bars"></i>
 </nav>
+
+
+
+
 
 
 <!-- Hero Section -->
@@ -126,6 +171,25 @@ setInterval(() => {
           Meet the visionary leader of Citadel of Mercy International Church.  
           A servant of God dedicated to preaching the undiluted Word of truth and leading souls to Christ.
         </p>
+
+         <p>Pascal Goodnews. O. phD is a ministry gift of God, Empowered by the Holy Spirit and sent to the body of Christ.
+             He had his first degree from the Bible University,
+          Canada; where He also earned his master and PhD.</p>
+
+          <p>The first child amongst 7 (seven) children and a secound generation preacher, Son of late Pascal Onyema Orji.
+            Amazingly, He stated preaching and prophesying from a
+            tender age of six (6,) born in Bauchi state, Nigeria
+          </p>
+
+          <p>He is a prophet with unprecedented evidence. His meetings are characterized with 
+            rare signs and wonders. A much sought after conference and convention speaker, with divine insights.</p>
+            
+          <p>He is a successful business strategist who travels extensitvly
+            around the world. He is the founder of citadel of Mercy Intl,
+            Presently in Lagos State, Nigeria; where he lives with his wife
+            and children.
+          </p>
+
       </div>
     </div>
 
@@ -139,11 +203,32 @@ setInterval(() => {
         </div>
       </div>
       <div class="card-content">
-        <h3>Our Choir</h3>
-        <p>
-          The Citadel Choir ushers God’s presence through powerful worship and praise.  
-          Their mission is to minister to the hearts of people with heavenly melodies.
-        </p>
+       <h3>Our Choir</h3> 
+<p>
+  The Citadel Choir is a vibrant and spirit-filled music ministry, dedicated to ushering
+  the presence of God through heartfelt worship and praise. They believe that music is
+  not just sound, but a powerful tool to transform lives and draw souls closer to Christ.
+</p>
+
+<p>
+  Comprising gifted men and women from diverse backgrounds, the choir is united by one
+  passion—to glorify Jesus with every song. Their voices blend in harmony to create an
+  atmosphere where the Holy Spirit moves freely, touching hearts and healing broken lives.
+</p>
+
+<p>
+  Beyond Sunday services, the choir ministers during special programs, crusades, weddings,
+  and community outreaches. Each ministration is marked by a deep sense of reverence and a
+  contagious joy that stirs the hearts of all who listen.
+</p>
+
+<p>
+  The choir is also a training ground for young talents, nurturing upcoming musicians and
+  worship leaders who will carry the torch of revival to the next generation. Discipline,
+  excellence, and spiritual growth are the hallmarks of their service.
+</p>
+
+
       </div>
     </div>
 
@@ -157,11 +242,44 @@ setInterval(() => {
         </div>
       </div>
       <div class="card-content">
-        <h3>Community Outreach</h3>
-        <p>
-          We believe in love in action.  
-          Through food drives, medical aid, and education, we extend God’s mercy to our community.
-        </p>
+      <h3>Community Outreach</h3> 
+<p>
+  At Citadel of Mercy International Church, we believe that true Christianity is not only
+  preached but demonstrated through acts of love. Our community outreach ministry exists
+  to extend God’s mercy beyond the walls of the church and into the lives of people in need.
+</p>
+
+<p>
+  Through regular food drives, we provide meals and essential supplies to families facing
+  hardship. Our mission is to ensure that no one in our community goes to bed hungry, and
+  that the love of Christ is expressed in practical, life-changing ways.
+</p>
+
+<p>
+  Medical aid is also a vital part of our outreach. With the help of volunteer doctors,
+  nurses, and healthcare workers, we organize free medical check-ups, health seminars, and
+  distribution of medications. Many lives have been saved and restored through these
+  initiatives.
+</p>
+
+<p>
+  Education remains a cornerstone of our outreach vision. By providing scholarships,
+  learning materials, and mentorship programs, we invest in the future of young people.
+  Our goal is to raise a generation that is spiritually grounded and academically empowered.
+</p>
+<!-- 
+<p>
+  Beyond physical needs, we extend emotional and spiritual support. Our outreach team
+  visits hospitals, prisons, and orphanages to bring hope, encouragement, and the message
+  of Christ’s love to those who may feel forgotten.
+</p>
+
+<p>
+  Community Outreach for us is more than charity—it is ministry. Every act of kindness
+  becomes an open door to share the gospel, to heal the hurting, and to transform lives
+  for the glory of God.
+</p> -->
+
       </div>
     </div>
 
@@ -175,11 +293,45 @@ setInterval(() => {
         </div>
       </div>
       <div class="card-content">
+
         <h3>Prayer Ministry</h3>
-        <p>
-          Our intercessory team stands in the gap for the church, families, and nations.  
-          Prayer is the heartbeat of Citadel of Mercy International Church.
-        </p>
+<p>
+  The Prayer Ministry is the spiritual backbone of Citadel of Mercy International Church.  
+  We believe that nothing moves without prayer, and everything changes when God’s people
+  call upon His name.
+</p>
+
+<p>
+  Our intercessory team is committed to standing in the gap for the church, families,
+  communities, and nations. With hearts burdened for revival, they labor in the place of
+  prayer to birth God’s will on earth as it is in heaven.
+</p>
+
+<p>
+  Prayer gatherings are held regularly, where members unite in faith to seek God’s face,
+  break strongholds, and release divine blessings. From early morning prayers to night
+  vigils, the atmosphere is charged with fervency and power.
+</p>
+
+<p>
+  Beyond corporate meetings, the Prayer Ministry trains believers to cultivate a personal
+  lifestyle of prayer, teaching them how to pray effectively, study the Word, and walk in
+  the authority of the Spirit.
+</p>
+
+<p>
+  The team also organizes special intercessory sessions for pressing issues—whether for
+  the nation, the sick, the youth, or global crises. Their unshakable belief is that “the
+  effectual fervent prayer of the righteous availeth much” (James 5:16).
+</p>
+<!-- 
+<p>
+  Prayer is not just a ministry to us—it is our heartbeat, our lifeline, and our anchor.
+  Through prayer, we connect with heaven, shift the earth, and prepare the way for God’s
+  kingdom to manifest mightily in our generation.
+</p> -->
+
+      
       </div>
     </div>
 
@@ -302,12 +454,13 @@ setInterval(() => {
     <div class="footer-col">
       <h3>Contact</h3>
       <p><i class="fas fa-envelope"></i> info@citadelofmercy.org</p>
-      <p><i class="fas fa-phone"></i> +234 801 234 5678</p>
+      <p><i class="fas fa-phone"></i> +2347061278308</p>
       <div class="social-icons">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-        <a href="https://wa.me/2348012345678" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/share/16Hv3R6sgG/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/pascalgoodsnr" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@paschalgoodsnr?_t=ZS-8zrbGdQ5zXA&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.me/+2347061278308" target="_blank"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
 
@@ -346,7 +499,25 @@ setInterval(() => {
   }
 
   document.addEventListener("DOMContentLoaded", startCardSlides);
-</script>
+</script> 
+
+
+
+
+
+
+
+<!-- 
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script> -->
+
 
 <script src="./Js/index.js" defer></script>
 </body>

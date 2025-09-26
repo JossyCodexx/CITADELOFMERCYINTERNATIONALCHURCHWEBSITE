@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Drives - Citadel of Mercy International Church</title>
+  <link rel="stylesheet" href="./CSS/food-drives.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .hero { position:relative; height:100vh; overflow:hidden; }
+    .hero-images { position:absolute; top:0; left:0; width:100%; height:100%; }
+    .hero-images img { position:absolute; width:100%; height:100%; object-fit:cover; opacity:0; animation:slideShow 15s infinite; }
+    .hero-images img:nth-child(1) { animation-delay:0s; }
+    .hero-images img:nth-child(2) { animation-delay:5s; }
+    .hero-images img:nth-child(3) { animation-delay:10s; }
+    @keyframes slideShow { 0%{opacity:0;} 10%{opacity:1;} 30%{opacity:1;} 40%{opacity:0;} 100%{opacity:0;} }
+    .hero-content { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#fff; text-align:center; max-width:850px; padding:20px; background: rgba(0,0,0,0.6); border-radius:10px; }
+    .hero-content h1 { font-size:40px; margin-bottom:15px; text-transform:uppercase; }
+    .hero-content p { font-size:18px; line-height:1.6; }
+
+    .cards-container { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; padding:40px 50px; }
+    .card { position:relative; overflow:hidden; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2); background:#fff; }
+    .card-images { position:relative; height:230px; }
+    .card-images img { position:absolute; width:100%; height:100%; object-fit:cover; opacity:0; animation:slideCard 12s infinite; }
+    .card-images img:nth-child(1) { animation-delay:0s; }
+    .card-images img:nth-child(2) { animation-delay:4s; }
+    .card-images img:nth-child(3) { animation-delay:8s; }
+    @keyframes slideCard { 0%{opacity:0;} 10%{opacity:1;} 30%{opacity:1;} 40%{opacity:0;} 100%{opacity:0;} }
+    .card-content { padding:15px; text-align:center; }
+    .card-content h3 { margin:10px 0; color:#006600; }
+    .card-content p { font-size:15px; color:#333; }
+  </style>
+</head>
+<body>
+
+
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="./images/logo.jpg.png" alt="Church Logo">
+  </div>
+
+  <!-- Hamburger Icon (mobile only) -->
+  <div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Nav Links -->
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="messages.html">Messages</a></li>
+
+    <!-- Dropdown for Foundation -->
+    <li class="dropdown">
+      <a href="foundation.html">Foundation <i class="fas fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="youth-academy.html">Youth Academy</a></li>
+        <li><a href="leadership-development.html">Leadership Development</a></li>
+        <li><a href="sunday-school.html">Sunday School</a></li>
+        <li><a href="prayer-ministry.html">Prayer Ministry</a></li>
+      </ul>
+    </li>
+
+    <!-- Dropdown for Education -->
+    <li class="dropdown">
+      <a href="education.html">Education <i class="fas fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="bible-college.html">Bible College</a></li>
+        <li><a href="training-seminars.html">Training & Seminars</a></li>
+      </ul>
+    </li>
+
+    <!-- Dropdown for Community Outreach -->
+    <li class="dropdown">
+      <a href="community-outreach.html" class="active">Community Outreach <i class="fas fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="food-drives.html">Food Drives</a></li>
+        <li><a href="medical-aid.html">Medical Aid</a></li>
+        <li><a href="education-support.html">Educational Support</a></li>
+        <li><a href="empowerment.html">Community Empowerment</a></li>
+        <li><a href="volunteer.html">Volunteer With Us</a></li>
+      </ul>
+    </li>
+
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="donation.html">Donation</a></li>
+  </ul>
+</nav>
+
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-images">
+    <img src="./images/food1.jpg" alt="Food Drive 1">
+    <img src="./images/food2.jpg" alt="Food Drive 2">
+    <img src="./images/food3.jpg" alt="Food Drive 3">
+  </div>
+  <div class="hero-content">
+    <h1>Food Drives</h1>
+    <p>Providing meals and essential food supplies to families, widows, and communities in need through the love of Christ.</p>
+  </div>
+</section>
+
+<!-- Food Drive Programs -->
+<section class="cards-container">
+  <div class="card">
+    <div class="card-images">
+      <img src="./images/food-outreach1.jpg" alt="">
+      <img src="./images/food-outreach2.jpg" alt="">
+      <img src="./images/food-outreach3.jpg" alt="">
+    </div>
+    <div class="card-content">
+      <h3>Community Food Outreach</h3>
+      <p>Distributing essential food items to struggling families and individuals in local communities.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-images">
+      <img src="./images/food-widows1.jpg" alt="">
+      <img src="./images/food-widows2.jpg" alt="">
+      <img src="./images/food-widows3.jpg" alt="">
+    </div>
+    <div class="card-content">
+      <h3>Widows & Vulnerable Support</h3>
+      <p>Bringing hope and care to widows, orphans, and vulnerable groups with food supplies and encouragement.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-images">
+      <img src="./images/food-children1.jpg" alt="">
+      <img src="./images/food-children2.jpg" alt="">
+      <img src="./images/food-children3.jpg" alt="">
+    </div>
+    <div class="card-content">
+      <h3>Children’s Feeding Program</h3>
+      <p>Ensuring children in underprivileged areas have access to nutritious meals for growth and learning.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="donate-hero">
+  <div class="donate-overlay">
+    <h2>Join Our Food Drives<br>"For I was hungry and you gave me something to eat" - Matt. 25:35</h2>
+    <a href="donation.html" class="donate-btn">DONATE FOOD</a>
+  </div>
+  <div class="donate-hero-images">
+    <img src="./images/food4.jpg" alt="">
+    <img src="./images/food5.jpg" alt="">
+    <img src="./images/food6.jpg" alt="">
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <a href="index.html" class="footer-logo">
+        <img src="./images/logo.jpg.png" alt="Church Logo">
+        <h2>CITADEL OF MERCY <span class="highlight">CHURCH</span></h2>
+      </a>
+      <p>Feeding the hungry and spreading the love of Christ through impactful food drive programs.</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="foundation.html">Foundation</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="food-drives.html">Food Drives</a></li>
+        <li><a href="donation.html">Give / Donate</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Programs</h3>
+      <ul>
+        <li><a href="#">Community Food Outreach</a></li>
+        <li><a href="#">Widows Support</a></li>
+        <li><a href="#">Children Feeding</a></li>
+        <li><a href="#">Medical Aid</a></li>
+        <li><a href="#">Empowerment Projects</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <p><i class="fas fa-envelope"></i> outreach@citadelofmercy.org</p>
+      <p><i class="fas fa-phone"></i> +2347061278308</p>
+      <div class="social-icons">
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/share/16Hv3R6sgG/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/pascalgoodsnr" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@paschalgoodsnr?_t=ZS-8zrbGdQ5zXA&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.me/+2347061278308" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Citadel of Mercy International Church - Food Drives. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="./Js/food-drives.js" defer></script>
+</body>
+</html>

@@ -6,84 +6,73 @@
   <title>Empowering - Citadel of Mercy International Church</title>
   <link rel="stylesheet" href="./CSS/empowerment.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <style>
-    /* Navbar */
-    .navbar { display:flex; justify-content:space-between; align-items:center; background:#fff; padding:15px 30px; }
-    .logo img { height:100px; width:130%; }
-    .nav-links { list-style:none; display:flex; gap:20px; }
-    .nav-links a { text-decoration:none; color:#0056b3; font-weight:bold; }
-    .nav-links a:hover { color:#003d80; }
-    .social-links a { color:#0056b3; font-size:20px; margin-left:15px; transition:color 0.3s; }
-    .social-links a:hover { color:#f4d03f; }
-
-    /* Hero Section */
-    .hero { position:relative; height:100vh; overflow:hidden; }
-    .hero-images { position:absolute; top:0; left:0; width:100%; height:100%; }
-    .hero-images img { position:absolute; width:100%; height:100%; object-fit:cover; opacity:0; animation:slideShow 15s infinite; }
-    .hero-images img:nth-child(1) { animation-delay:0s; }
-    .hero-images img:nth-child(2) { animation-delay:5s; }
-    .hero-images img:nth-child(3) { animation-delay:10s; }
-    @keyframes slideShow { 0%{opacity:0;} 10%{opacity:1;} 30%{opacity:1;} 40%{opacity:0;} 100%{opacity:0;} }
-    .hero-content { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); color:#fff; text-align:center; max-width:850px; padding:20px; background: rgba(0,0,0,0.6); border-radius:10px; }
-    .hero-content h1 { font-size:36px; margin-bottom:15px; text-transform:uppercase; }
-    .hero-content p { font-size:18px; line-height:1.6; }
-
-    /* Buttons Section */
-    .button-section { text-align:center; margin:40px auto; }
-    .button-section a { display:inline-block; margin:10px; padding:12px 25px; background:#0056b3; color:#fff; font-weight:bold; text-decoration:none; border-radius:5px; transition:background 0.3s; }
-    .button-section a:hover { background:#003d80; }
-
-    /* Cards Section */
-    .cards-container { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; padding:20px 50px; }
-    .card { position:relative; overflow:hidden; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2); background:#fff; }
-    .card-images { position:relative; height:250px; }
-    .card-images img { position:absolute; width:100%; height:100%; object-fit:cover; opacity:0; animation: slideCard 12s infinite; }
-    .card-images img:nth-child(1) { animation-delay:0s; }
-    .card-images img:nth-child(2) { animation-delay:4s; }
-    .card-images img:nth-child(3) { animation-delay:8s; }
-    @keyframes slideCard { 0%{opacity:0;} 10%{opacity:1;} 30%{opacity:1;} 40%{opacity:0;} 100%{opacity:0;} }
-    .card-content { padding:15px; text-align:center; }
-    .card-content h3 { margin:10px 0; color:#0056b3; }
-    .card-content p { font-size:15px; color:#333; }
-
-    /* Empower Donate Hero Section */
-    .donate-hero { position:relative; width:100%; height:100vh; overflow:hidden; display:flex; align-items:center; justify-content:center; }
-    .donate-hero-images { position:absolute; top:0; left:0; width:100%; height:100%; z-index:-1; }
-    .donate-hero-images img { position:absolute; width:100%; height:100%; object-fit:cover; opacity:0; animation:fade 15s infinite; }
-    .donate-hero-images img:nth-child(1) { animation-delay:0s; }
-    .donate-hero-images img:nth-child(2) { animation-delay:5s; }
-    .donate-hero-images img:nth-child(3) { animation-delay:10s; }
-    @keyframes fade { 0%,20%{opacity:1;} 33.33%,100%{opacity:0;} }
-    .donate-overlay { background: rgba(0,0,0,0.65); padding:50px 30px; border-radius:12px; text-align:center; color:#fff; max-width:900px; position:relative; z-index:2; }
-    .donate-overlay h2 { font-size:34px; line-height:1.5; margin-bottom:25px; }
-    .donate-btn { display:inline-block; padding:15px 40px; background:#f4d03f; color:#000; font-weight:bold; text-decoration:none; border-radius:6px; font-size:18px; transition:background 0.3s, transform 0.2s; }
-    .donate-btn:hover { background:#d4ac0d; transform:scale(1.08); }
-  </style>
+    <!-- Google Fonts: Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ 
 </head>
 <body>
+
+
+
+
 <!-- Navbar -->
 <nav class="navbar">
   <div class="logo">
     <img src="./images/logo.jpg.png" alt="Church Logo">
   </div>
-  <ul class="nav-links">
+
+  <!-- Hamburger Icon (mobile only) -->
+  <div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Nav Links -->
+  <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="messages.html">Messages</a></li>
-    <li><a href="foundation.html">Foundation</a></li>
-    <li><a href="education.html">Education</a></li>
-    <li><a href="empowering.html" class="active">Empowering</a></li>
+
+    <!-- Dropdown for Foundation -->
+    <li class="dropdown">
+      <a href="foundation.html">Foundation <i class="fas fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="youth-academy.html">Youth Academy</a></li>
+        <li><a href="leadership-development.html">Leadership Development</a></li>
+        <li><a href="sunday-school.html">Sunday School</a></li>
+        <li><a href="prayer-ministry.html">Prayer Ministry</a></li>
+      </ul>
+    </li>
+
+    <!-- Dropdown for Education -->
+    <li class="dropdown">
+      <a href="education.html">Education <i class="fas fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="bible-college.html">Bible College</a></li>
+        <li><a href="training-seminars.html">Training & Seminars</a></li>
+      </ul>
+    </li>
+
+    <!-- Dropdown for Community Outreach -->
+    <li class="dropdown">
+      <a href="community-outreach.html" class="active">Community Outreach <i class="fas fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="food-drives.html">Food Drives</a></li>
+        <li><a href="medical-aid.html">Medical Aid</a></li>
+        <li><a href="education-support.html">Educational Support</a></li>
+        <li><a href="empowerment.html">Community Empowerment</a></li>
+        <li><a href="volunteer.html">Volunteer With Us</a></li>
+      </ul>
+    </li>
+
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="donate.html">Give / Donate</a></li>
+    <li><a href="donation.html">Donation</a></li>
   </ul>
-  <div class="social-links">
-    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://wa.me/2348012345678" target="_blank"><i class="fab fa-whatsapp"></i></a>
-  </div>
-  <i class="fas fa-bars"></i>
 </nav>
+
+
+
+
 
 <!-- Hero Section -->
 <section class="hero">
@@ -100,63 +89,161 @@
 
 <!-- Empower Programs Buttons -->
 <section class="button-section">
-  <a href="#">New Members Empowerment</a>
-  <a href="#">Pastoral Mentorship</a>
-  <a href="#">Leadership Development</a>
-  <a href="#">Community Outreach</a>
+  <a href="New-Members-Empowerment.html">New Members Empowerment</a>
+  <a href="Pastoral-Mentorship.html">Pastoral Mentorship</a>
+  <a href="Leadership-Development.html">Leadership Development</a>
+  <a href="Community-Outreach.html">Community Outreach</a>
 </section>
 
+
+
+
+
+
 <!-- Empower Cards -->
-<section class="cards-container">
-  <div class="card">
-    <div class="card-images">
-      <img src="./images/mentor1.jpg" alt="">
-      <img src="./images/mentor2.jpg" alt="">
-      <img src="./images/mentor3.jpg" alt="">
+<section class="empower-section">
+  <div class="empower-card">
+    <div class="empower-slideshow">
+      <div class="slides">
+        <img src="./images/mentor1.jpg" alt="">
+        <img src="./images/mentor2.jpg" alt="">
+        <img src="./images/mentor3.jpg" alt="">
+      </div>
     </div>
-    <div class="card-content">
+    <div class="empower-card-content">
       <h3>Pastoral Empowerment</h3>
       <p>Pastors equipping members with biblical truth, prayer life, and mentorship that strengthens their faith journey.</p>
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-images">
-      <img src="./images/newmember.jpg" alt="">
-      <img src="./images/newmember2.jpg" alt="">
-      <img src="./images/newmember3.jpg" alt="">
+  <div class="empower-card">
+    <div class="empower-slideshow">
+      <div class="slides">
+        <img src="./images/newmember.jpg" alt="">
+        <img src="./images/newmember2.jpg" alt="">
+        <img src="./images/newmember3.jpg" alt="">
+      </div>
     </div>
-    <div class="card-content">
+    <div class="empower-card-content">
       <h3>New Members Growth</h3>
       <p>Special empowerment classes designed to nurture new believers, teaching them the fundamentals of faith and service.</p>
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-images">
-      <img src="./images/emp-donate1.jpg" alt="">
-      <img src="./images/emp-donate2.jpg" alt="">
-      <img src="./images/emp-donate3.jpg" alt="">
+  <div class="empower-card">
+    <div class="empower-slideshow">
+      <div class="slides">
+        <img src="./images/emp-donate1.jpg" alt="">
+        <img src="./images/emp-donate2.jpg" alt="">
+        <img src="./images/emp-donate3.jpg" alt="">
+      </div>
     </div>
-    <div class="card-content">
+    <div class="empower-card-content">
       <h3>Community Empowerment</h3>
       <p>Helping members impact society positively through training, outreach, and empowerment projects that spread God’s love.</p>
     </div>
   </div>
 </section>
 
-<!-- Empower Donate Hero Section -->
+
+
+
+
+
+
+  <!-- Donate Hero Section -->
 <section class="donate-hero">
   <div class="donate-overlay">
-    <h2>Support Empowerment Missions<br>Raising leaders, transforming lives</h2>
-    <a href="donate.html" class="donate-btn">SUPPORT EMPOWERMENT</a>
+   <h2>Support Empowerment Missions<br>Raising leaders, transforming lives</h2>
+    <a href="donation.html" class="donate-btn">DONATE NOW</a>
   </div>
+
+  <!-- Background Images -->
   <div class="donate-hero-images">
-    <img src="./images/emp-donate1.jpg" alt="">
-    <img src="./images/emp-donate2.jpg" alt="">
-    <img src="./images/emp-donate3.jpg" alt="">
+    <img src="./images/emp-donate1.jpg" alt="Donate Background 1">
+    <img src="./images/emp-donate2.jpg" alt="Donate Background 2">
+    <img src="./images/emp-donate3.jpg" alt="Donate Background 3">
   </div>
 </section>
+
+<style>
+/* Donate Hero Section Full Page */
+.donate-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;  /* Full page height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donate-hero-images {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+}
+
+.donate-hero-images img {
+  position: absolute;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fade 15s infinite;
+}
+
+/* 3-image animation */
+.donate-hero-images img:nth-child(1) { animation-delay: 0s; }
+.donate-hero-images img:nth-child(2) { animation-delay: 5s; }
+.donate-hero-images img:nth-child(3) { animation-delay: 10s; }
+
+@keyframes fade {
+  0%, 20% { opacity: 1; }
+  33.33%, 100% { opacity: 0; }
+}
+
+.donate-overlay {
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+  padding: 50px 30px;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+  max-width: 900px;
+  position: relative;
+  z-index: 2;
+}
+
+.donate-overlay h2 {
+  font-size: 36px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.donate-btn {
+  display: inline-block;
+  padding: 15px 40px;
+  background: #f4d03f; /* gold */
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 18px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.donate-btn:hover {
+  background: #d4ac0d;
+  transform: scale(1.08);
+}
+</style>
+
+
+
+
+
+
+
 
 <!-- Footer Section -->
 <footer class="footer">
@@ -201,12 +288,13 @@
     <div class="footer-col">
       <h3>Contact</h3>
       <p><i class="fas fa-envelope"></i> empower@citadelofmercy.org</p>
-      <p><i class="fas fa-phone"></i> +234 801 234 5678</p>
+      <p><i class="fas fa-phone"></i> +2347061278308</p>
       <div class="social-icons">
-        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://wa.me/2348012345678" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/share/16Hv3R6sgG/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/pascalgoodsnr" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@paschalgoodsnr?_t=ZS-8zrbGdQ5zXA&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.me/+2347061278308" target="_blank"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
 
@@ -218,6 +306,32 @@
   </div>
 </footer>
 
-<script src="./Js/all.js" defer></script>
+
+
+
+
+
+<script>
+  function startEmpowerSlides() {
+    document.querySelectorAll('.empower-slideshow .slides').forEach(slides => {
+      let images = slides.querySelectorAll('img');
+      let index = 0;
+
+      // Show the first image
+      images[index].classList.add('active');
+
+      setInterval(() => {
+        images[index].classList.remove('active');   // hide current
+        index = (index + 1) % images.length;        // move to next
+        images[index].classList.add('active');      // show next
+      }, 4000); // every 4 seconds
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", startEmpowerSlides);
+</script>
+
+
+<script src="./Js/empowerment.js" defer></script>
 </body>
 </html>

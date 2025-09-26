@@ -6,135 +6,78 @@
   <title>Donate - Citadel of Mercy International Church</title>
   <link rel="stylesheet" href="./CSS/donate.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #fff;       /* White background */
-      padding: 15px 30px;
-    }
-
-    .logo img {
-      height: 100px;
-      width: 130%;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #0056b3;   /* Blue text */
-      font-weight: bold;
-    }
-
-    .nav-links a:hover {
-      color: #003d80;   /* Darker blue on hover */
-    }
-
-    .social-links a {
-      color: #0056b3;   /* Blue icons */
-      font-size: 20px;
-      margin-left: 15px;
-      transition: color 0.3s;
-    }
-
-    .social-links a:hover {
-      color: #f4d03f;   /* Gold hover */
-    }
-
-
-
-
-
-
-    /* Donation Cards Section */
-    .donate-section {
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-      gap: 30px;
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .donate-card {
-      flex: 1;
-      background: #fff;
-      padding: 40px 25px;
-      border-radius: 12px;
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s;
-    }
-
-    .donate-card:hover {
-      transform: translateY(-10px);
-    }
-
-    .donate-card i {
-      font-size: 50px;
-      color: #f4d03f; /* Gold */
-      margin-bottom: 20px;
-    }
-
-    .donate-card h3 {
-      font-size: 24px;
-      color: #0056b3;
-      margin-bottom: 15px;
-    }
-
-    .donate-card p {
-      font-size: 16px;
-      color: #444;
-      margin-bottom: 20px;
-    }
-
-    .donate-btn {
-      display: inline-block;
-      padding: 12px 25px;
-      background: #0056b3;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .donate-btn:hover {
-      background: #003d80;
-    }
-  </style>
+  
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="./images/logo.jpg.png" alt="Church Logo">
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="messages.html">Messages</a></li>
-      <li><a href="foundation.html">Foundation</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="donation.html">Donation</a></li>
-    </ul>
-    <div class="social-links">
-      <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://wa.me/2348012345678" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    </div>
+  
+
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="./images/logo.jpg.png" alt="Church Logo">
+  </div>
+
+  <!-- Hamburger Icon (mobile only) -->
+  <div class="menu-toggle" id="menu-toggle">
     <i class="fas fa-bars"></i>
-  </nav>
+  </div>
+
+  <!-- Nav Links -->
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="messages.html">Messages</a></li>
+
+    <!-- Dropdown for Foundation -->
+    <li class="dropdown">
+      <a href="foundation.html">Foundation <i class="fas fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="youth-academy.html">Youth Academy</a></li>
+        <li><a href="leadership-development.html">Leadership Development</a></li>
+        <li><a href="sunday-school.html">Sunday School</a></li>
+        <li><a href="prayer-ministry.html">Prayer Ministry</a></li>
+      </ul>
+    </li>
+
+    <!-- Dropdown for Education -->
+    <li class="dropdown">
+      <a href="education.html">Education <i class="fas fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="bible-college.html">Bible College</a></li>
+        <li><a href="training-seminars.html">Training & Seminars</a></li>
+      </ul>
+    </li>
+
+    <!-- Dropdown for Community Outreach -->
+    <li class="dropdown">
+      <a href="community-outreach.html" class="active">Community Outreach <i class="fas fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="food-drives.html">Food Drives</a></li>
+        <li><a href="medical-aid.html">Medical Aid</a></li>
+        <li><a href="education-support.html">Educational Support</a></li>
+        <li><a href="empowerment.html">Community Empowerment</a></li>
+        <li><a href="volunteer.html">Volunteer With Us</a></li>
+      </ul>
+    </li>
+
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="donation.html">Donation</a></li>
+  </ul>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!-- Hero Section -->
@@ -305,12 +248,13 @@
     <div class="footer-col">
       <h3>Contact</h3>
       <p><i class="fas fa-envelope"></i> info@citadelofmercy.org</p>
-      <p><i class="fas fa-phone"></i> +234 801 234 5678</p>
+      <p><i class="fas fa-phone"></i> +2347061278308</p>
       <div class="social-icons">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-        <a href="https://wa.me/2348012345678" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/share/16Hv3R6sgG/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/pascalgoodsnr" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@paschalgoodsnr?_t=ZS-8zrbGdQ5zXA&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.me/+2347061278308" target="_blank"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
 

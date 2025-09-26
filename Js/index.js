@@ -1,17 +1,18 @@
-let slides = document.querySelectorAll('.slides img');
-let index = 0;
-let interval = 80000; // 80 seconds per image (80,000 ms) → 3 images ≈ 240s (4 minutes)
 
-function showSlide() {
-  slides.forEach((slide, i) => {
-    slide.classList.remove('active');
-    if (i === index) slide.classList.add('active');
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
   });
-  index = (index + 1) % slides.length;
-}
 
-// Show first slide
-showSlide();
+  // Handle dropdowns on mobile
+  document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (window.innerWidth <= 900) {
+        e.preventDefault(); // prevent redirect
+        link.parentElement.classList.toggle('open');
+      }
+    });
+  });
 
-// Change slides every 80 seconds
-setInterval(showSlide, interval);

@@ -3,36 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+      <!-- Google Fonts: Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./CSS/donation.css">
     <title>Document</title>
 </head>
+
+
+
 <!-- Navbar -->
 <nav class="navbar">
   <div class="logo">
     <img src="./images/logo.jpg.png" alt="Church Logo">
   </div>
-  <ul class="nav-links">
+
+  <!-- Hamburger Icon (mobile only) -->
+  <div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Nav Links -->
+  <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="messages.html">Messages</a></li>
-    <li><a href="foundation.html">Foundation</a></li>
+
+    <!-- Dropdown for Foundation -->
+    <li class="dropdown">
+      <a href="foundation.html">Foundation <i class="fas fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="youth-academy.html">Youth Academy</a></li>
+        <li><a href="leadership-development.html">Leadership Development</a></li>
+        <li><a href="sunday-school.html">Sunday School</a></li>
+        <li><a href="prayer-ministry.html">Prayer Ministry</a></li>
+      </ul>
+    </li>
+
+    <!-- Dropdown for Education -->
+    <li class="dropdown">
+      <a href="education.html">Education <i class="fas fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="bible-college.html">Bible College</a></li>
+        <li><a href="training-seminars.html">Training & Seminars</a></li>
+      </ul>
+    </li>
+
+    <!-- Dropdown for Community Outreach -->
+    <li class="dropdown">
+      <a href="community-outreach.html" class="active">Community Outreach <i class="fas fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="food-drives.html">Food Drives</a></li>
+        <li><a href="medical-aid.html">Medical Aid</a></li>
+        <li><a href="education-support.html">Educational Support</a></li>
+        <li><a href="empowerment.html">Community Empowerment</a></li>
+        <li><a href="volunteer.html">Volunteer With Us</a></li>
+      </ul>
+    </li>
+
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="donation.html">donation</a></li>
+    <li><a href="donation.html">Donation</a></li>
   </ul>
-  <div class="social-links">
-    <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://wa.me/2348012345678" target="_blank"><i class="fab fa-whatsapp"></i></a>
-  </div>
-  <i class="fas fa-bars"></i>
 </nav>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <style>
-
-
-
-
 
 /* Mobile Styles */
 @media (max-width: 768px) {
@@ -70,223 +130,279 @@
 }
 </style>
 
-<script>
-  // Mobile Navbar Toggle
-  const menuToggle = document.getElementById("menu-toggle");
-  const navLinks = document.getElementById("nav-links");
 
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donation Form - Citadel of Mercy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    .container {
+      max-width: 750px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 {
+      text-align: center;
+      color: #444;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background: #2a8ef7;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #176ed0;
+    }
+    .card-mockup {
+      background: #f9fafc;
+      border: 1px dashed #ccc;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+    .card-mockup input {
+      background: #eee;
+      border: none;
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0;
+    }
+    .bank-donations, .payment-option {
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 15px 0;
+    }
+    .payment-option a {
+      font-weight: bold;
+      color: #2a8ef7;
+      text-decoration: none;
+    }
+    .payment-option a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  
+<div class="container">
+  <h1>Make a Donation</h1>
+  <p style="text-align:center;">Support our mission — choose your preferred donation method.</p>
+
+  <!-- Donation Form + Paystack -->
+  <form id="donation-form" class="donation-card-form">
+    <label for="full-name">Full Name (First & Last):</label>
+    <input type="text" id="full-name" name="full-name" required>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <label for="amount">Donation Amount (₦):</label>
+    <input type="number" id="amount" name="amount" min="100" required>
+
+    <!-- Visual card mockup -->
+    <div class="card-mockup" aria-hidden="true">
+      <div class="card-row">
+        <input type="text" placeholder="Card number •••• •••• •••• ••••" readonly>
+      </div>
+      <div class="card-row small">
+        <input type="text" placeholder="MM / YY" readonly>
+        <input type="text" placeholder="CVV" readonly>
+      </div>
+      <div class="card-note">
+        Enter card details in the secure Paystack popup after clicking <strong>Pay Now</strong>.
+      </div>
+    </div>
+
+    <button type="submit" id="pay-now-btn">Pay Now</button>
+  </form>
+
+  <!-- Payment Confirmation Form -->
+  <h2>Payment Confirmation (Bank Transfer)</h2>
+  <p style="text-align:center;">Please fill in the details after you send the money to our bank.</p>
+
+  <form id="paymentForm">
+    <label for="bank">Select Bank You Used:</label>
+    <select id="bank" required>
+      <option value="">-- Select Bank --</option>
+      <option value="GTBank">GTBank</option>
+      <option value="Zenith Bank">Zenith Bank</option>
+      <option value="Access Bank">Access Bank</option>
+      <option value="UBA">UBA</option>
+      <option value="First Bank">First Bank</option>
+      <option value="PayPal">PayPal</option>
+      <option value="Cash on Delivery">Cash on Delivery</option>
+    </select>
+
+    <label for="amountSent">Amount Sent (₦):</label>
+    <input type="number" id="amountSent" placeholder="Enter amount you sent" required>
+
+    <label for="pin">Transfer Reference / ATM PIN:</label>
+    <input type="text" id="pin" placeholder="Enter your transfer reference or ATM PIN" required>
+
+    <label for="notes">Additional Notes:</label>
+    <textarea id="notes" placeholder="Any notes..." rows="3"></textarea>
+
+    <button type="submit">Submit Payment Info</button>
+  </form>
+
+  <!-- Bank Donations Info -->
+  <div class="bank-donations">
+    <h3>Or Donate Directly via Bank Transfer:</h3>
+    <ul>
+      <li><strong>CITADEL OF MERCY</strong> - FIDELITY BANK: 4110033881</li>
+      <li><strong>CITADEL OF MERCY</strong> - ZENITH BANK PLC: 1002748402</li>
+      <li><strong>CITADEL OF MERCY</strong> - GTB USD: 0011047538</li>
+    </ul>
+    <p>Please include your name and email in the transfer description so we can acknowledge your donation.</p>
+  </div>
+
+  <!-- Extra Bank Options -->
+  <h2>Bank Transfer Options</h2>
+  <div class="payment-option">
+    <a href="https://www.gtbank.com" target="_blank">🏦 GTBank Transfer</a><br>
+    Account Name: Citadel of Mercy<br>
+    Account Number: 1234567890
+  </div>
+  <div class="payment-option">
+    <a href="https://www.zenithbank.com" target="_blank">🏦 Zenith Bank Transfer</a><br>
+    Account Name: Citadel of Mercy<br>
+    Account Number: 0987654321
+  </div>
+  <div class="payment-option">
+    <a href="https://www.accessbankplc.com" target="_blank">🏦 Access Bank Transfer</a><br>
+    Account Name: Citadel of Mercy<br>
+    Account Number: 1122334455
+  </div>
+  <div class="payment-option">
+    <a href="https://www.uba.com" target="_blank">🏦 UBA Transfer</a><br>
+    Account Name: Citadel of Mercy<br>
+    Account Number: 5566778899
+  </div>
+  <div class="payment-option">
+    <a href="https://www.firstbanknigeria.com" target="_blank">🏦 First Bank Transfer</a><br>
+    Account Name: Citadel of Mercy<br>
+    Account Number: 6677889900
+  </div>
+  <div class="payment-option"> 
+    <a href="https://www.fidelitybank.ng" target="_blank">🏦 Fidelity Bank Transfer</a><br>
+    Account Name: CITADEL OF MERCY<br>
+    Account Number: 4110033881
+  </div>
+
+  <!-- PayPal -->
+  <h2>PayPal Payment</h2>
+  <div class="payment-option">
+    <a href="https://www.paypal.me/bervicstore" target="_blank">💳 Pay with PayPal</a>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Paystack donation mockup
+    const donationForm = document.getElementById('donation-form');
+    if (donationForm) {
+      donationForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('full-name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const amount = document.getElementById('amount').value;
+
+        alert("Paystack Donation Submitted!\n\n" +
+              "Name: " + name + "\n" +
+              "Email: " + email + "\n" +
+              "Phone: " + phone + "\n" +
+              "Amount: ₦" + amount + "\n\n" +
+              "Proceeding to Paystack secure payment...");
+        
+        donationForm.reset();
+      });
+    }
+
+    // Bank transfer confirmation
+    const form = document.getElementById('paymentForm');
+    if (form) {
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+
+        const data = {
+          bank: document.getElementById('bank').value,
+          amount: document.getElementById('amountSent').value,
+          pin: document.getElementById('pin').value,
+          notes: document.getElementById('notes').value
+        };
+
+        alert("Payment Info Submitted!\n\n" +
+              "Bank: " + data.bank + "\n" +
+              "Amount: ₦" + data.amount + "\n" +
+              "Reference/PIN: " + data.pin + "\n" +
+              "Notes: " + data.notes);
+
+        form.reset();
+      });
+    }
   });
 </script>
 
-
-
-<!-- Donation Form + Paystack (secure) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<form id="donation-form" class="donation-card-form">
-  <label for="full-name">Full Name (First & Last):</label>
-  <input type="text" id="full-name" name="full-name" required>
-
-  <label for="email">Email Address:</label>
-  <input type="email" id="email" name="email" required>
-
-  <label for="phone">Phone Number:</label>
-  <input type="tel" id="phone" name="phone" required>
-
-  <label for="amount">Donation Amount (GHS):</label>
-  <input type="number" id="amount" name="amount" min="1" step="0.01" required>
-
-  <!-- Visual card mockup (readonly) -->
-  <div class="card-mockup" aria-hidden="true">
-    <div class="card-row">
-      <input type="text" placeholder="Card number •••• •••• •••• ••••" readonly>
-    </div>
-    <div class="card-row small">
-      <input type="text" placeholder="MM / YY" readonly>
-      <input type="text" placeholder="CVV" readonly>
-    </div>
-    <div class="card-note">
-      Enter card details in the secure Paystack popup after clicking <strong>Pay Now</strong>.
-    </div>
-  </div>
-
-  <button type="submit" id="pay-now-btn">Pay Now</button>
-</form>
-
-<!-- card icons in blue strip -->
-<div class="payment-icons-blue">
-  <i class="fab fa-cc-visa"></i>
-  <i class="fab fa-cc-mastercard"></i>
-  <i class="fas fa-credit-card"></i> <!-- generic (you can replace with verve image if you have) -->
-  <span class="icons-label">Secure payments — Visa · MasterCard · Verve</span>
-</div>
-
-<!-- Paystack Inline -->
-<script src="https://js.paystack.co/v1/inline.js"></script>
-
-<script>
-  (function(){
-    const form = document.getElementById('donation-form');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      // Basic client validation (phone, amount etc.)
-      const name = document.getElementById('full-name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const amountValue = parseFloat(document.getElementById('amount').value);
-
-      if (!name || !email || !phone || !amountValue || amountValue <= 0) {
-        alert('Please complete all required fields and enter a valid amount.');
-        return;
-      }
-
-      // Paystack expects amount in Kobo (smallest unit) — multiply by 100
-      const amountKobo = Math.round(amountValue * 100);
-
-      // Split name into firstname / lastname (simple)
-      const nameParts = name.split(' ');
-      const firstname = nameParts[0] || '';
-      const lastname = nameParts.slice(1).join(' ') || '';
-
-      const handler = PaystackPop.setup({
-        key: 'YOUR_PUBLIC_KEY', // <-- REPLACE with your Paystack public key
-        email: email,
-        amount: amountKobo,
-        currency: 'GHS',
-        firstname: firstname,
-        lastname: lastname,
-        phone: phone,
-        channels: ['card', 'bank', 'ussd', 'mobile_money'], // cards + others
-        metadata: {
-          custom_fields: [
-            { display_name: "Phone", variable_name: "phone", value: phone }
-          ]
-        },
-        callback: function(response){
-          // response.reference contains transaction reference
-          // Here you should verify transaction on your server before confirming.
-          alert('Payment successful. Transaction reference: ' + response.reference);
-          // optional: redirect to thank-you page with reference as query param
-          window.location.href = 'thank-you.html?reference=' + encodeURIComponent(response.reference);
-        },
-        onClose: function(){
-          // user closed payment without finishing
-          console.log('Payment window closed.');
-        }
-      });
-
-      handler.openIframe();
-    });
-  })();
-</script>
-
-<!-- Styles -->
-<style>
-  /* Form */
-  .donation-card-form {
-    max-width: 520px;
-    margin: 30px auto;
-    padding: 24px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  }
-
-  .donation-card-form label {
-    display:block;
-    margin-bottom:8px;
-    font-weight:600;
-    color:#072b57;
-  }
-
-  .donation-card-form input[type="text"],
-  .donation-card-form input[type="email"],
-  .donation-card-form input[type="tel"],
-  .donation-card-form input[type="number"] {
-    width:100%;
-    padding:12px 14px;
-    margin-bottom:16px;
-    border-radius:8px;
-    border:1px solid #d6dbe6;
-    font-size:15px;
-  }
-
-  /* Pay Now button */
-  #pay-now-btn {
-    width:100%;
-    padding:14px;
-    background:#0056b3; /* church blue */
-    color:#fff;
-    border:none;
-    border-radius:10px;
-    font-weight:700;
-    font-size:16px;
-    cursor:pointer;
-    transition: transform .12s ease, background .12s ease;
-  }
-  #pay-now-btn:hover { transform: translateY(-2px); background:#003d80; }
-
-  /* Visual card mockup (readonly fields) */
-  .card-mockup {
-    margin: 8px 0 18px;
-    background: linear-gradient(180deg,#ffffff 0,#f7f9fc 100%);
-    padding:12px;
-    border-radius:8px;
-    border:1px solid #e6eef8;
-  }
-  .card-mockup .card-row { margin-bottom:8px; }
-  .card-mockup .card-row.small { display:flex; gap:10px; }
-  .card-mockup input[readonly] {
-    width:100%;
-    padding:10px;
-    border-radius:6px;
-    border:1px dashed #cdd9ea;
-    background: linear-gradient(180deg,#fbfdff,#ffffff);
-    color:#546e8a;
-  }
-  .card-note {
-    font-size:13px;
-    color:#6b7f94;
-    margin-top:6px;
-  }
-
-  /* Blue icon strip */
-  .payment-icons-blue {
-    max-width:520px;
-    margin:12px auto 40px;
-    display:flex;
-    align-items:center;
-    gap:18px;
-    padding:10px 14px;
-    background:#e9f2ff; /* pale blue box */
-    border-radius:10px;
-    box-shadow: 0 3px 10px rgba(2,34,84,0.04);
-    justify-content:center;
-  }
-  .payment-icons-blue i {
-    font-size:34px;
-    color:#0b63b8; /* blue */
-  }
-  .payment-icons-blue .icons-label {
-    margin-left:8px;
-    font-weight:600;
-    color:#0b63b8;
-  }
-
-  /* small screens */
-  @media (max-width:520px){
-    .card-mockup .card-row.small { flex-direction:column; }
-  }
-</style>
+</body>
+</html>
 
 
 
-    
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -335,12 +451,13 @@
     <div class="footer-col">
       <h3>Contact</h3>
       <p><i class="fas fa-envelope"></i> info@citadelofmercy.org</p>
-      <p><i class="fas fa-phone"></i> +234 801 234 5678</p>
+      <p><i class="fas fa-phone"></i> +2347061278308</p>
       <div class="social-icons">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
-        <a href="https://wa.me/2348012345678" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/share/16Hv3R6sgG/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/pascalgoodsnr" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@paschalgoodsnr?_t=ZS-8zrbGdQ5zXA&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://wa.me/+2347061278308" target="_blank"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
 
@@ -360,26 +477,6 @@
 
 
 
-
-<script>
-  function startCardSlides() {
-    document.querySelectorAll('.card-slideshow .slides').forEach(slides => {
-      let images = slides.querySelectorAll('img');
-      let index = 0;
-
-      // Show the first image
-      images[index].classList.add('active');
-
-      setInterval(() => {
-        images[index].classList.remove('active');   // hide current
-        index = (index + 1) % images.length;        // move to next
-        images[index].classList.add('active');      // show next
-      }, 4000); // change every 4s
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", startCardSlides);
-</script>
 
 <script src="./Js/donation.js" defer></script>
 </body>

@@ -1,10 +1,28 @@
+
+body {
+  font-family: 'Poppins', sans-serif;
+} 
+
+
+
+
+body {
+  padding-top: 120px; 
+}
+
 /* Navbar */
 .navbar {
+  position: fixed;      
+  top: 0;               
+  left: 0;
+  width: 100%;         
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  background: #fff;       /* White background */
+  background: #fff;     
   padding: 15px 30px;
+  z-index: 1000;        
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
 }
 
 .logo img {
@@ -28,17 +46,140 @@
   color: #003d80;   /* Darker blue on hover */
 }
 
-.social-links a {
-  color: #0056b3;   /* Blue icons */
-  font-size: 20px;
-  margin-left: 15px;
-  transition: color 0.3s;
+
+
+.nav-links li {
+  position: relative;
+  list-style: none;
 }
 
-.social-links a:hover {
-  color: #f4d03f;   /* Gold hover */
+.nav-links .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 200px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  z-index: 1000;
 }
 
+.nav-links .dropdown-menu li {
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-links .dropdown-menu li:last-child {
+  border-bottom: none;
+}
+
+.nav-links .dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.nav-links .dropdown-menu a:hover {
+  background: #0066cc;
+  color: white;
+}
+
+
+.nav-links .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+.nav-links .dropdown > a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Default: show nav links, hide bars */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #0056b3;
+  cursor: pointer;
+  margin-left: 200px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+/* Mobile styles */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: block; /* show bars */
+  }
+
+  .nav-links {
+    display: none; /* hide links */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  }
+
+  .nav-links.show {
+    display: flex; /* show when toggled */
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Dropdown on mobile (expand inside list) */
+  .dropdown-menu {
+    display: none;
+    flex-direction: column;
+    background: #f9f9f9;
+  }
+
+  .dropdown.open .dropdown-menu {
+    display: flex;
+  }
+}
 
 
 
@@ -232,40 +373,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Footer */
 .footer {
   background: #111;
@@ -352,4 +459,137 @@
   margin-top: 20px;
   font-size: 13px;
   color: #bbb;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================= Mobile Responsive ================= */
+
+/* Tablets & small desktops */
+@media (max-width: 768px) {
+  .nice1,
+  .nice2 {
+    margin-left: 0; /* remove large margin */
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 90%;
+    padding: 10px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+    padding: 10px 15px;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .card-slideshow {
+    height: 180px;
+  }
+
+  .card-content h3 {
+    font-size: 1rem;
+  }
+
+  .card-content p {
+    font-size: 0.9rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-logo img {
+    width: 40px;
+  }
+
+  .footer-logo h2 {
+    font-size: 16px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .card-slideshow {
+    height: 150px;
+  }
+
+  .card-content h3 {
+    font-size: 0.95rem;
+  }
+
+  .card-content p {
+    font-size: 0.85rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-icons a {
+    margin: 5px;
+    font-size: 16px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
 }

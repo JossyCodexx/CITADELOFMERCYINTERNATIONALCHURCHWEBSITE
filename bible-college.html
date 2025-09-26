@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bible College - Citadel of Mercy International Church</title>
+  <link rel="stylesheet" href="./CSS/bible-college.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Google Fonts: Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="./images/logo.jpg.png" alt="Church Logo">
+  </div>
+
+  <!-- Hamburger Icon (mobile only) -->
+  <div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Nav Links -->
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="messages.html">Messages</a></li>
+
+    <!-- Dropdown for Foundation -->
+    <li class="dropdown">
+      <a href="foundation.html">Foundation <i class="fas fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="youth-academy.html">Youth Academy</a></li>
+        <li><a href="leadership-development.html">Leadership Development</a></li>
+        <li><a href="sunday-school.html">Sunday School</a></li>
+        <li><a href="prayer-ministry.html">Prayer Ministry</a></li>
+      </ul>
+    </li>
+
+    <!-- Dropdown for Education -->
+    <li class="dropdown">
+      <a href="education.html">Education <i class="fas fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="scholarships.html">Scholarships</a></li>
+        <li><a href="bible-college.html">Bible College</a></li>
+        <li><a href="training-seminars.html">Training & Seminars</a></li>
+      </ul>
+    </li>
+
+    <!-- Dropdown for Community Outreach -->
+    <li class="dropdown">
+      <a href="community-outreach.html" class="active">Community Outreach <i class="fas fa-caret-down"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="food-drives.html">Food Drives</a></li>
+        <li><a href="medical-aid.html">Medical Aid</a></li>
+        <li><a href="education-support.html">Educational Support</a></li>
+        <li><a href="empowerment.html">Community Empowerment</a></li>
+        <li><a href="volunteer.html">Volunteer With Us</a></li>
+      </ul>
+    </li>
+
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="donation.html">Donation</a></li>
+  </ul>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-images">
+    <img src="./images/bible1.jpg" alt="Bible College 1">
+    <img src="./images/bible2.jpg" alt="Bible College 2">
+    <img src="./images/bible3.jpg" alt="Bible College 3">
+  </div>
+  <div class="hero-content">
+    <h1>Bible College</h1>
+    <p>Equipping men and women with sound biblical teaching, spiritual formation, and leadership training to impact the world for Christ.</p>
+  </div>
+</section>
+
+
+
+
+<!-- Bible College Programs -->
+<section class="cards-container">
+  <div class="card">
+    <div class="card-images">
+      <img src="./images/teaching1.jpg" alt="">
+      <img src="./images/teaching2.jpg" alt="">
+      <img src="./images/teaching3.jpg" alt="">
+    </div>
+    <div class="card-content">
+      <h3>Pastoral Training</h3>
+      <p>Preparing pastors and ministers with strong theological foundations and practical ministry skills.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-images">
+      <img src="./images/leadership1.jpg" alt="">
+      <img src="./images/leadership2.jpg" alt="">
+      <img src="./images/leadership3.jpg" alt="">
+    </div>
+    <div class="card-content">
+      <h3>Leadership Development</h3>
+      <p>Raising leaders equipped to serve with integrity, vision, and excellence in church and society.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-images">
+      <img src="./images/discipleship1.jpg" alt="">
+      <img src="./images/discipleship2.jpg" alt="">
+      <img src="./images/discipleship3.jpg" alt="">
+    </div>
+    <div class="card-content">
+      <h3>Discipleship & Evangelism</h3>
+      <p>Training believers to deepen their walk with Christ and effectively share the gospel with others.</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="donate-hero">
+  <div class="donate-overlay">
+     <h2>Enroll in Bible College<br>"Study to show yourself approved" - 2 Tim. 2:15</h2>
+    <a href="contact.html" class="donate-btn">ENROLL NOW</a>
+  </div>
+
+  <!-- Background Images -->
+  <div class="donate-hero-images">
+    <img src="./images/bible1.jpg" alt="Donate Background 1">
+    <img src="./images/bible2.jpg" alt="Donate Background 2">
+    <img src="./images/bible3.jpg" alt="Donate Background 3">
+  </div>
+</section>
+
+<style>
+/* Donate Hero Section Full Page */
+.donate-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;  /* Full page height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donate-hero-images {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -1;
+}
+
+.donate-hero-images img {
+  position: absolute;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fade 15s infinite;
+}
+
+/* 3-image animation */
+.donate-hero-images img:nth-child(1) { animation-delay: 0s; }
+.donate-hero-images img:nth-child(2) { animation-delay: 5s; }
+.donate-hero-images img:nth-child(3) { animation-delay: 10s; }
+
+@keyframes fade {
+  0%, 20% { opacity: 1; }
+  33.33%, 100% { opacity: 0; }
+}
+
+.donate-overlay {
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+  padding: 50px 30px;
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+  max-width: 900px;
+  position: relative;
+  z-index: 2;
+}
+
+.donate-overlay h2 {
+  font-size: 36px;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.donate-btn {
+  display: inline-block;
+  padding: 15px 40px;
+  background: #f4d03f; /* gold */
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 18px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.donate-btn:hover {
+  background: #d4ac0d;
+  transform: scale(1.08);
+}
+</style>
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <a href="index.html" class="footer-logo">
+        <img src="./images/logo.jpg.png" alt="Church Logo">
+        <h2>CITADEL OF MERCY <span class="highlight">CHURCH</span></h2>
+      </a>
+      <p>Raising Christ-centered leaders through biblical teaching, discipleship, and practical ministry training.</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="foundation.html">Foundation</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="bible-college.html">Bible College</a></li>
+        <li><a href="donation.html">Give / Donate</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Programs</h3>
+      <ul>
+        <li><a href="#">Pastoral Training</a></li>
+        <li><a href="#">Leadership Development</a></li>
+        <li><a href="#">Discipleship & Evangelism</a></li>
+        <li><a href="#">Theological Studies</a></li>
+        <li><a href="#">Practical Ministry</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <p><i class="fas fa-envelope"></i> biblecollege@citadelofmercy.org</p>
+      <p><i class="fas fa-phone"></i>+2347061278308</p>
+      <div class="social-icons">
+   <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+   <a href="https://www.facebook.com/share/16Hv3R6sgG/" target="_blank"><i class="fab fa-facebook"></i></a>
+   <a href="https://www.instagram.com/pascalgoodsnr" target="_blank"><i class="fab fa-instagram"></i></a>
+   <a href="https://www.tiktok.com/@paschalgoodsnr?_t=ZS-8zrbGdQ5zXA&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+   <a href="https://wa.me/+2347061278308" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Citadel of Mercy International Church Bible College. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="./Js/bible-college.js" defer></script>
+</body>
+</html>
